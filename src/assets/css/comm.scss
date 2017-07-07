@@ -1,0 +1,117 @@
+html,
+body,
+ul,
+li {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    text-size-adjust: none;
+    color: rgb(46, 48, 48);
+    font-size: 12px;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    min-width: 1110px;
+    background: url(../images/bg.jpg) 0px 0px repeat rgb(229, 230, 208);
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+#app {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 66vh;
+    flex-direction: column;
+    .grid-cell {
+        flex: 3;
+    }
+    header,
+    footer {
+        flex: 1;
+    }
+    .grid-body {
+        display: flex;
+        flex: 1;
+    }
+    .grid-content {
+        flex: 1;
+    }
+    .grid-nav,
+    .grid-ads {
+        /* 两个边栏的宽度设为12em */
+        flex: 0 0 12em;
+    }
+    .grid-nav {
+        /* 导航放到最左边 */
+        order: -1;
+        ul li a.router-link-active {
+            background: yellowgreen;
+        }
+    }
+    .grid-ads p {
+        background-color: #fff;
+        padding: 20px 10px;
+        height: 48px;
+        border-radius: 10px;
+        margin: 0px 10px;
+    }
+    .banner {
+        padding: 30px;
+        width: 100vh;
+        height: 60vh;
+        margin: auto;
+        border: 1px solid #d9d9bd;
+        background-color: #f0f0e3;
+        font-size: 14px;
+        line-height: 1.8em;
+        color: #696a52;
+        border-radius: 8px;
+        -moz-box-shadow: 0px 1px 0px rgba(0, 0, 0, .05), 0px 1px 0 rgba(255, 255, 255, .6) inset;
+        -webkit-box-shadow: 0px 1px 0px rgba(0, 0, 0, .05), 0px 1px 0 rgba(255, 255, 255, .6) inset;
+        box-shadow: 0px 1px 0px rgba(0, 0, 0, .05), 0px 1px 0 rgba(255, 255, 255, .6) inset;
+        -webkit-transition-delay: initial;
+        -webkit-transition-duration: 0.3s;
+        -webkit-transition-property: all;
+        -webkit-transition-timing-function: initial;
+    }
+    .banner:hover {
+        background-color: #fafaf3;
+    }
+    .navs {
+        display: flex;
+        flex-direction: column;
+        .nav-ceil {
+            display: block;
+            width: 16vh;
+            padding: 15px;
+            background: darkkhaki;
+            color: #fff;
+            margin: 10px;
+            font-size: 1.4em;
+            text-decoration: none;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-body {
+        flex-direction: column;
+        flex: 1;
+    }
+    .grid-nav,
+    .grid-ads,
+    .grid-content {
+        flex: auto;
+    }
+}
